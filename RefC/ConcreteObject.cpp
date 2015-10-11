@@ -15,7 +15,7 @@ ConcreteObject::ConcreteObject() : RootObject() {
 
 void ConcreteObject::setWeak(RootObject* ptr) {
     weak = ptr;
-    Weakify(weak);
+    Safify(weak);
 }
 
 void ConcreteObject::setStrong(RootObject* ptr) {

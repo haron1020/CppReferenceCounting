@@ -9,10 +9,13 @@
 #ifndef RootObject_hpp
 #define RootObject_hpp
 
-#define Weakify(ptr) ptr->makeSafe((RootObject**)&ptr);
+
 #define Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
 #define Release(ptr) if (ptr->release()) { delete ptr; };
 #define Autorelease(ptr) ptr->autorelease();
+
+// TODO: Make default for initialization
+#define Safify(ptr) ptr->makeSafe((RootObject**)&ptr);
 
 #include <stdio.h>
 #include "Util.hpp"

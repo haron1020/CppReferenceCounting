@@ -18,14 +18,14 @@ int main(int argc, const char * argv[]) {
     POOL_START
     
     ConcreteObject *root1 = new ConcreteObject();
-    Weakify(root1)
+    Safify(root1)
     Autorelease(root1)
     
     ConcreteObject *weakLeaf = new ConcreteObject();
-    Weakify(weakLeaf)
+    Safify(weakLeaf)
     
     ConcreteObject *strongLeaf = new ConcreteObject();
-    Weakify(strongLeaf)
+    Safify(strongLeaf)
     root1->setStrong(strongLeaf);
     Release(strongLeaf)
     root1->setWeak(weakLeaf);
@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
         POOL_START
     
         ConcreteObject* weak2 = new ConcreteObject();
-        Weakify(weak2)
+        Safify(weak2)
         strongLeaf->setWeak(weak2);
         Autorelease(weak2)
         POOL_END
