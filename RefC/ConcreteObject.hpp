@@ -6,11 +6,8 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#ifndef ConcreteObject_hpp
-#define ConcreteObject_hpp
-
-#include <iostream>
-#include "RootObject.hpp"
+#import <iostream>
+#import "RootObject.hpp"
 
 namespace RefCount {
     class ConcreteObject : public RootObject {
@@ -25,7 +22,3 @@ namespace RefCount {
         ~ConcreteObject();
     };
 }
-
-
-
-#endif /* ConcreteObject_hpp */

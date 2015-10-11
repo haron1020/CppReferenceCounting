@@ -6,7 +6,6 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#include "RootObject.hpp"
-#include "AutoreleasePool.hpp"
-#include "ConcreteObject.hpp"
-
+#import "RootObject.hpp"
+#import "AutoreleasePool.hpp"
+#import "ConcreteObject.hpp"

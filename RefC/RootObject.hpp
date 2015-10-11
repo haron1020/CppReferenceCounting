@@ -6,11 +6,8 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#ifndef RootObject_hpp
-#define RootObject_hpp
+#import "Util.hpp"
 
-#include <stdio.h>
-#include "Util.hpp"
 
 #define Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
 #define Release(ptr) if (ptr->release()) { delete ptr; ptr = nullptr; } else { ptr->makeUnsafe((RootObject**)&ptr);}
@@ -42,8 +39,5 @@ namespace RefCount {
         
         bool drain();
     };
-
 }
 
-
-#endif /* RootObject_hpp */

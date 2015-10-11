@@ -10,7 +10,6 @@
 		FE74CBEB1BCA663B008BAB7D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBEA1BCA663B008BAB7D /* main.cpp */; };
 		FE74CBF31BCA6F21008BAB7D /* RootObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBF11BCA6F21008BAB7D /* RootObject.cpp */; };
 		FE74CBF61BCA6F4E008BAB7D /* AutoreleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBF41BCA6F4E008BAB7D /* AutoreleasePool.cpp */; };
-		FE74CBF91BCA8412008BAB7D /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBF71BCA8412008BAB7D /* Util.cpp */; };
 		FE74CBFC1BCA8B0F008BAB7D /* ConcreteObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,6 @@
 		FE74CBF21BCA6F21008BAB7D /* RootObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RootObject.hpp; sourceTree = "<group>"; };
 		FE74CBF41BCA6F4E008BAB7D /* AutoreleasePool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AutoreleasePool.cpp; sourceTree = "<group>"; };
 		FE74CBF51BCA6F4E008BAB7D /* AutoreleasePool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AutoreleasePool.hpp; sourceTree = "<group>"; };
-		FE74CBF71BCA8412008BAB7D /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
 		FE74CBF81BCA8412008BAB7D /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Util.hpp; sourceTree = "<group>"; };
 		FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConcreteObject.cpp; sourceTree = "<group>"; };
 		FE74CBFB1BCA8B0F008BAB7D /* ConcreteObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConcreteObject.hpp; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				FE74CBF51BCA6F4E008BAB7D /* AutoreleasePool.hpp */,
 				FE74CBF41BCA6F4E008BAB7D /* AutoreleasePool.cpp */,
 				FE74CBF81BCA8412008BAB7D /* Util.hpp */,
-				FE74CBF71BCA8412008BAB7D /* Util.cpp */,
 				FE74CBFB1BCA8B0F008BAB7D /* ConcreteObject.hpp */,
 				FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */,
 			);
@@ -144,7 +141,6 @@
 				FE74CBFC1BCA8B0F008BAB7D /* ConcreteObject.cpp in Sources */,
 				FE74CBF31BCA6F21008BAB7D /* RootObject.cpp in Sources */,
 				FE74CBEB1BCA663B008BAB7D /* main.cpp in Sources */,
-				FE74CBF91BCA8412008BAB7D /* Util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

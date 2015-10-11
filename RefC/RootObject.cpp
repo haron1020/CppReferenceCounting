@@ -6,8 +6,8 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#include "RootObject.hpp"
-#include "AutoreleasePool.hpp"
+#import "RootObject.hpp"
+#import "AutoreleasePool.hpp"
 
 namespace RefCount {
     

@@ -6,10 +6,7 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#ifndef Util_hpp
-#define Util_hpp
-
-#include <iostream>
+#import <iostream>
 
 template <typename T>
 T* reallocate(T* what, int newSize, int oldSize) {
@@ -21,5 +18,3 @@ T* reallocate(T* what, int newSize, int oldSize) {
     delete [] what;
     return tmp;
 }
-
-#endif /* Util_hpp */

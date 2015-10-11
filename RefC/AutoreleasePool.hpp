@@ -6,11 +6,9 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#ifndef AutoreleasePool_hpp
-#define AutoreleasePool_hpp
+#import <iostream>
+#import "RootObject.hpp"
 
-#include <iostream>
-#include "RootObject.hpp"
 
 #define POOL_START { \
 AutoreleasePool::startPool();
@@ -45,4 +43,3 @@ namespace RefCount {
     };
     
 }
-#endif /* AutoreleasePool_hpp */

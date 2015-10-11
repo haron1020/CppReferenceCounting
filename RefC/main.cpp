@@ -6,8 +6,8 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#include <iostream>
-#include "RefCount.hpp"
+#import <iostream>
+#import "RefCount.hpp"
 
 using namespace RefCount;
 

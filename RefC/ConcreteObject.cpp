@@ -6,7 +6,7 @@
 //  Copyright © 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#include "ConcreteObject.hpp"
+#import "ConcreteObject.hpp"
 
 namespace RefCount {
     ConcreteObject::ConcreteObject() : RootObject() {
