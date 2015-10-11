@@ -18,21 +18,21 @@ int main(int argc, const char * argv[]) {
     POOL_START
     
     // All constructors are required to call RootObject's constructor during thyself initializtion
-    ConcreteObject *root1 = new ConcreteObject();
+    // CSO(name, initializer) stands for CreateSafeObject
+    // when object, returned by this initializer is freed,
+    // Pointer root1 will get a walue of nullptr
+    ConcreteObject *CSO(root1, new ConcreteObject())
     
-    // Temporary macro to make pointer safe. If at any moment during execution object, that root1 points to will be deallocated, root1 pointer will get a value of nullptr
-    Safify(root1)
     // Puts object into autoreleasepool.
     // Reference counter is decreased by one and if it equals
     // zero, object will be deallocated when the closest
     // autorelease pool drains
     Autorelease(root1)
     
-    ConcreteObject *weakLeaf = new ConcreteObject();
-    Safify(weakLeaf)
+    ConcreteObject *CSO(weakLeaf, new ConcreteObject())
     
-    ConcreteObject *strongLeaf = new ConcreteObject();
-    Safify(strongLeaf)
+    ConcreteObject *CSO(strongLeaf, new ConcreteObject());
+    
     root1->setStrong(strongLeaf);
     
     // Immediate object deallocation, if reference counter equals zero after 1 is subrtracted
@@ -43,8 +43,8 @@ int main(int argc, const char * argv[]) {
         // All autoreleased objects will get into this pool
         POOL_START
     
-        ConcreteObject* weak2 = new ConcreteObject();
-        Safify(weak2)
+        ConcreteObject* CSO(weak2, new ConcreteObject())
+        
         strongLeaf->setWeak(weak2);
         // For example this one
         Autorelease(weak2)

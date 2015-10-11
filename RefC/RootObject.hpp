@@ -17,6 +17,8 @@
 // TODO: Make default for initialization
 #define Safify(ptr) ptr->makeSafe((RootObject**)&ptr);
 
+#define CSO(ptr, constructor) ptr = constructor; ptr->makeSafe((RootObject**)&ptr);
+
 #include <stdio.h>
 #include "Util.hpp"
 
@@ -39,7 +41,6 @@ public:
     void makeUnsafe(RootObject** ptr);
     
     bool drain();
-    
 };
 
 #endif /* RootObject_hpp */
