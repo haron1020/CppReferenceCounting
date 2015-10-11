@@ -15,7 +15,7 @@ protected:
     void(*deallocator)(T* res);
 public:
     Container(T* res);
-    Container();
+    Container(T* res, void(*deallocator)());
 };
 
 template <typename T>
@@ -23,8 +23,6 @@ Container<T>::Container(T* res){
     var = res;
 }
 template <typename T>
-Container<T>::Container(){
-    // std::cout<<sizeof(T);
-    var = new char [sizeof(T)];
-    std::cout<<var;
+Container<T>::Container(T* res, void(*deallocator)()){
+    var = nullptr;
 }
