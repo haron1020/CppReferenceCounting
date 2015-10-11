@@ -11,8 +11,8 @@
 
 
 #define Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
-#define Release(ptr) if (ptr->release()) { delete ptr; };
-#define Autorelease(ptr) ptr->autorelease();
+#define Release(ptr) if (ptr->release()) { delete ptr; ptr = nullptr; } else { ptr->makeUnsafe((RootObject**)&ptr);}
+#define Autorelease(ptr) ptr->autorelease(); ptr->makeUnsafe((RootObject**)&ptr);
 
 // TODO: Make default for initialization
 #define Safify(ptr) ptr->makeSafe((RootObject**)&ptr);
@@ -36,6 +36,7 @@ public:
     bool release();
     void autorelease();
     void makeSafe(RootObject** ptr);
+    void makeUnsafe(RootObject** ptr);
     
     bool drain();
     

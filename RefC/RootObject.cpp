@@ -21,7 +21,9 @@ RootObject::RootObject() {
 
 RootObject::~RootObject() {
     for (int i = 0; i < _selfPtrsCount; ++i) {
-        *(_selfPtrs[i]) = nullptr;
+        if (_selfPtrs[i]) {
+            *(_selfPtrs[i]) = nullptr;
+        }
     }
     delete [] _selfPtrs;
 };
@@ -38,6 +40,15 @@ void RootObject::makeSafe(RootObject** ptr) {
         _selfPtrs = reallocate(_selfPtrs, _selfPtrsCapacity *= 2, _selfPtrsCount);
     }
     _selfPtrs[_selfPtrsCount++] = ptr;
+}
+
+void RootObject::makeUnsafe(RootObject** ptr) {
+    for (int i = 0; i < _selfPtrsCount; ++i) {
+        if (_selfPtrs[i] == ptr) {
+            _selfPtrs[i] = nullptr;
+            return;
+        }
+    }
 }
 
 bool RootObject::release() {
