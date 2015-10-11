@@ -8,15 +8,14 @@
 
 #import "Util.hpp"
 
-
-#define Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
-#define Release(ptr) if (ptr->release()) { delete ptr; ptr = nullptr; } else { ptr->makeUnsafe((RootObject**)&ptr);}
-#define Autorelease(ptr) ptr->autorelease(); ptr->makeUnsafe((RootObject**)&ptr);
+#define rfc_Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
+#define rfc_Release(ptr) if (ptr->release()) { delete ptr; ptr = nullptr; } else { ptr->makeUnsafe((RootObject**)&ptr);}
+#define rfc_Autorelease(ptr) ptr->autorelease(); ptr->makeUnsafe((RootObject**)&ptr);
 
 // TODO: Make default for initialization
-#define Safify(ptr) ptr->makeSafe((RootObject**)&ptr);
+#define rfc_Safify(ptr) ptr->makeSafe((RootObject**)&ptr);
 
-#define CSO(ptr, constructor) ptr = constructor; ptr->makeSafe((RootObject**)&ptr);
+#define rfc_CSO(ptr, constructor) ptr = constructor; ptr->makeSafe((RootObject**)&ptr);
 
 namespace RefCount {
     class RootObject {

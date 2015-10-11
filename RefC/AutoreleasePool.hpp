@@ -9,11 +9,10 @@
 #import <iostream>
 #import "RootObject.hpp"
 
-
-#define POOL_START { \
+#define rfc_AUTORELEASE_POOL_START { \
 AutoreleasePool::startPool();
 
-#define POOL_END AutoreleasePool::endPool(); \
+#define rfc_AUTORELEASE_POOL_DRAIN AutoreleasePool::endPool(); \
 }
 namespace RefCount {
     

@@ -16,17 +16,17 @@ namespace RefCount {
     
     void ConcreteObject::setWeak(RootObject* ptr) {
         weak = ptr;
-        Safify(weak);
+        rfc_Safify(weak);
     }
     
     void ConcreteObject::setStrong(RootObject* ptr) {
         strong = ptr;
-        Retain(strong);
+        rfc_Retain(strong);
     }
     
     ConcreteObject::~ConcreteObject() {
         if (strong) {
-            Release(strong);
+            rfc_Release(strong);
         }
     }
 }

@@ -14,44 +14,44 @@ using namespace RefCount;
 
 int main(int argc, const char * argv[]) {
     // All of program execution which utilizes reference counting system should be wrapped in POOL_START/POOL_END macros
-    POOL_START
+    rfc_AUTORELEASE_POOL_START
     
     // All constructors are required to call RootObject's constructor during thyself initializtion
     // CSO(name, initializer) stands for CreateSafeObject
     // when object, returned by this initializer is freed,
     // Pointer root1 will get a walue of nullptr
-    ConcreteObject *CSO(root1, new ConcreteObject())
+    ConcreteObject *rfc_CSO(root1, new ConcreteObject())
     
     // Puts object into autoreleasepool.
     // Reference counter is decreased by one and if it equals
     // zero, object will be deallocated when the closest
     // autorelease pool drains
-    Autorelease(root1)
+    rfc_Autorelease(root1)
     
-    ConcreteObject *CSO(weakLeaf, new ConcreteObject())
+    ConcreteObject *rfc_CSO(weakLeaf, new ConcreteObject())
     
-    ConcreteObject *CSO(strongLeaf, new ConcreteObject());
+    ConcreteObject *rfc_CSO(strongLeaf, new ConcreteObject());
     
     root1->setStrong(strongLeaf);
     
     // Immediate object deallocation, if reference counter equals zero after 1 is subrtracted
-    Release(strongLeaf)
+    rfc_Release(strongLeaf)
     root1->setWeak(weakLeaf);
     {
         // Nested pool
         // All autoreleased objects will get into this pool
-        POOL_START
+        rfc_AUTORELEASE_POOL_START
     
-        ConcreteObject* CSO(weak2, new ConcreteObject())
+        ConcreteObject* rfc_CSO(weak2, new ConcreteObject())
         
         strongLeaf->setWeak(weak2);
         // For example this one
-        Autorelease(weak2)
-        POOL_END
+        rfc_Autorelease(weak2)
+        rfc_AUTORELEASE_POOL_DRAIN
     }
-    Release(weakLeaf)
+    rfc_Release(weakLeaf)
     
-    POOL_END
+    rfc_AUTORELEASE_POOL_DRAIN
   
     return 0;
 }
