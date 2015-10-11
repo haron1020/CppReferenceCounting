@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA43615B1BCB0C0600A90F0A /* Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4361591BCB0C0600A90F0A /* Container.cpp */; };
 		FE74CBEB1BCA663B008BAB7D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBEA1BCA663B008BAB7D /* main.cpp */; };
 		FE74CBF31BCA6F21008BAB7D /* RootObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBF11BCA6F21008BAB7D /* RootObject.cpp */; };
 		FE74CBF61BCA6F4E008BAB7D /* AutoreleasePool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE74CBF41BCA6F4E008BAB7D /* AutoreleasePool.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA4361591BCB0C0600A90F0A /* Container.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Container.cpp; sourceTree = "<group>"; };
+		BA43615A1BCB0C0600A90F0A /* Container.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Container.hpp; sourceTree = "<group>"; };
 		FE74CBE71BCA663B008BAB7D /* RefC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RefC; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74CBEA1BCA663B008BAB7D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FE74CBF11BCA6F21008BAB7D /* RootObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RootObject.cpp; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				FE74CBF81BCA8412008BAB7D /* Util.hpp */,
 				FE74CBFB1BCA8B0F008BAB7D /* ConcreteObject.hpp */,
 				FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */,
+				BA4361591BCB0C0600A90F0A /* Container.cpp */,
+				BA43615A1BCB0C0600A90F0A /* Container.hpp */,
 			);
 			path = RefC;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA43615B1BCB0C0600A90F0A /* Container.cpp in Sources */,
 				FE74CBF61BCA6F4E008BAB7D /* AutoreleasePool.cpp in Sources */,
 				FE74CBFC1BCA8B0F008BAB7D /* ConcreteObject.cpp in Sources */,
 				FE74CBF31BCA6F21008BAB7D /* RootObject.cpp in Sources */,
