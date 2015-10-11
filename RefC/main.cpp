@@ -8,6 +8,7 @@
 
 #import <iostream>
 #import "RefCount.hpp"
+#include "Container.hpp"
 
 using namespace RefCount;
 
@@ -52,6 +53,16 @@ int main(int argc, const char * argv[]) {
     rfc_Release(weakLeaf)
     
     rfc_AUTORELEASE_POOL_DRAIN
+    
+    
+    
+        char * b = new char [3];
+        b[0] = '1';
+        b[1] = '2';
+        b[2] = '\0';
+        auto a = Container<typeof b>(b);
+        auto d = Container<double>(5.3);
+        auto c = Container<int>(3);
   
     return 0;
 }
