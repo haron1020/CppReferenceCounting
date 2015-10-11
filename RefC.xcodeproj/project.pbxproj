@@ -37,6 +37,7 @@
 		FE74CBF81BCA8412008BAB7D /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Util.hpp; sourceTree = "<group>"; };
 		FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConcreteObject.cpp; sourceTree = "<group>"; };
 		FE74CBFB1BCA8B0F008BAB7D /* ConcreteObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ConcreteObject.hpp; sourceTree = "<group>"; };
+		FE74CBFD1BCAB17D008BAB7D /* RefCount.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = RefCount.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +71,15 @@
 			isa = PBXGroup;
 			children = (
 				FE74CBEA1BCA663B008BAB7D /* main.cpp */,
+				FE74CBFD1BCAB17D008BAB7D /* RefCount.hpp */,
 				FE74CBF21BCA6F21008BAB7D /* RootObject.hpp */,
 				FE74CBF11BCA6F21008BAB7D /* RootObject.cpp */,
 				FE74CBF51BCA6F4E008BAB7D /* AutoreleasePool.hpp */,
 				FE74CBF41BCA6F4E008BAB7D /* AutoreleasePool.cpp */,
 				FE74CBF81BCA8412008BAB7D /* Util.hpp */,
 				FE74CBF71BCA8412008BAB7D /* Util.cpp */,
-				FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */,
 				FE74CBFB1BCA8B0F008BAB7D /* ConcreteObject.hpp */,
+				FE74CBFA1BCA8B0F008BAB7D /* ConcreteObject.cpp */,
 			);
 			path = RefC;
 			sourceTree = "<group>";
@@ -265,6 +267,7 @@
 				FE74CBF01BCA663B008BAB7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

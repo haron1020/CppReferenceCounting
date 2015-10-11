@@ -9,6 +9,8 @@
 #ifndef RootObject_hpp
 #define RootObject_hpp
 
+#include <stdio.h>
+#include "Util.hpp"
 
 #define Retain(ptr) ptr->retain(); ptr->makeSafe((RootObject**)&ptr);
 #define Release(ptr) if (ptr->release()) { delete ptr; ptr = nullptr; } else { ptr->makeUnsafe((RootObject**)&ptr);}
@@ -19,28 +21,29 @@
 
 #define CSO(ptr, constructor) ptr = constructor; ptr->makeSafe((RootObject**)&ptr);
 
-#include <stdio.h>
-#include "Util.hpp"
+namespace RefCount {
+    class RootObject {
+        int _refCount;
+        bool _autorelease;
+        RootObject*** _selfPtrs;
+        int _selfPtrsCount = 0;
+        int _selfPtrsCapacity = 0;
+        
+        void freePointers();
+    public:
+        RootObject();
+        virtual ~RootObject();
+        
+        void retain();
+        bool release();
+        void autorelease();
+        void makeSafe(RootObject** ptr);
+        void makeUnsafe(RootObject** ptr);
+        
+        bool drain();
+    };
 
-class RootObject {
-    int _refCount;
-    bool _autorelease;
-    RootObject*** _selfPtrs;
-    int _selfPtrsCount = 0;
-    int _selfPtrsCapacity = 0;
-    
-    void freePointers();
-public:
-    RootObject();
-    virtual ~RootObject();
-    
-    void retain();
-    bool release();
-    void autorelease();
-    void makeSafe(RootObject** ptr);
-    void makeUnsafe(RootObject** ptr);
-    
-    bool drain();
-};
+}
+
 
 #endif /* RootObject_hpp */

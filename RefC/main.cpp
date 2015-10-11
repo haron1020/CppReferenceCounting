@@ -7,10 +7,9 @@
 //
 
 #include <iostream>
-#include "RootObject.hpp"
-#include "AutoreleasePool.hpp"
-#include "ConcreteObject.hpp"
+#include "RefCount.hpp"
 
+using namespace RefCount;
 
 
 int main(int argc, const char * argv[]) {

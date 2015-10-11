@@ -16,31 +16,33 @@
 AutoreleasePool::startPool();
 
 #define POOL_END AutoreleasePool::endPool(); \
-                }
-
-class AutoreleasePool {
-private:
-    RootObject** _objects;
-    int _count;
-    int _capacity;
+}
+namespace RefCount {
     
-    AutoreleasePool();
-    ~AutoreleasePool();
+    class AutoreleasePool {
+    private:
+        RootObject** _objects;
+        int _count;
+        int _capacity;
+        
+        AutoreleasePool();
+        ~AutoreleasePool();
+        
+        bool hasObject(RootObject* object);
+        void addObject(RootObject* object);
+        void drain();
+        
+        static void performPreparation();
+        static void stopExecution();
+        
+    public:
+        static AutoreleasePool* startPool();
+        static void endPool();
+        
+        static AutoreleasePool*  currentPool();
+        static void addObjectToCurrentPool(RootObject* object);
+        static AutoreleasePool* poolForObject(RootObject* object);
+    };
     
-    bool hasObject(RootObject* object);
-    void addObject(RootObject* object);
-    void drain();
-    
-    static void performPreparation();
-    static void stopExecution();
-    
-public:
-    static AutoreleasePool* startPool();
-    static void endPool();
-    
-    static AutoreleasePool*  currentPool();
-    static void addObjectToCurrentPool(RootObject* object);
-    static AutoreleasePool* poolForObject(RootObject* object);
-};
-
+}
 #endif /* AutoreleasePool_hpp */

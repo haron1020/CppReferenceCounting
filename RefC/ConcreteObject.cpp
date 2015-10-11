@@ -8,23 +8,26 @@
 
 #include "ConcreteObject.hpp"
 
-ConcreteObject::ConcreteObject() : RootObject() {
-    strong = nullptr;
-    weak = nullptr;
-}
-
-void ConcreteObject::setWeak(RootObject* ptr) {
-    weak = ptr;
-    Safify(weak);
-}
-
-void ConcreteObject::setStrong(RootObject* ptr) {
-    strong = ptr;
-    Retain(strong);
-}
-
-ConcreteObject::~ConcreteObject() {
-    if (strong) {
-        Release(strong);
+namespace RefCount {
+    ConcreteObject::ConcreteObject() : RootObject() {
+        strong = nullptr;
+        weak = nullptr;
+    }
+    
+    void ConcreteObject::setWeak(RootObject* ptr) {
+        weak = ptr;
+        Safify(weak);
+    }
+    
+    void ConcreteObject::setStrong(RootObject* ptr) {
+        strong = ptr;
+        Retain(strong);
+    }
+    
+    ConcreteObject::~ConcreteObject() {
+        if (strong) {
+            Release(strong);
+        }
     }
 }
+
