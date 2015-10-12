@@ -7,3 +7,16 @@
 //
 
 #include "Container.hpp"
+
+template <typename T>
+RefCount::Container<T>::Container(T* res, deallocator<T> deallocatorFunc){
+    resource = res;
+    this->deallocatorFunc = deallocatorFunc;
+}
+
+template <typename T>
+RefCount::Container<T>::~Container<T>(){
+    if(deallocatorFunc == nullptr)
+        delete resource;
+    else deallocatorFunc();
+}

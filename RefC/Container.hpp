@@ -8,21 +8,22 @@
 
 #import "RootObject.hpp"
 
-template <typename T>
-class Container: public RefCount::RootObject {
-    T* var;
-protected:
-    void(*deallocator)(T* res);
-public:
-    Container(T* res);
-    Container(T* res, void(*deallocator)());
-};
 
-template <typename T>
-Container<T>::Container(T* res){
-    var = res;
+
+namespace RefCount {
+    template <typename T>
+    using deallocator = void(*)(T* res);
+    
+    template <typename T>
+    class Container: public RefCount::RootObject {
+        T* resource;
+    protected:
+        deallocator<T> deallocatorFunc;
+    public:
+        Container(T* res, deallocator<T> deallocatorFunc = nullptr);
+        ~Container();
+    };
 }
-template <typename T>
-Container<T>::Container(T* res, void(*deallocator)()){
-    var = nullptr;
-}
+
+//template <typename T>
+//using deallocator = void(*)(T* res);
